@@ -1,1 +1,8 @@
 .env
+agent/__pycache__/*
+mcp_servers/__pycache__/*
+memory/__pycache__/*
+utils/__pycache__/*
+summarization/__pycache__/*
+perception/__pycache__/*
+decision/__pycache__/*
