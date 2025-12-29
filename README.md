@@ -3,7 +3,9 @@ Super Agent
 
 ## Objective
 Pick 4 tasks (like sign me up on GMail, etc), and run on the code. Improve your prompt till you get the System to do it. Report if any CODE changes were requried to be done. SHARE FINAL VIDEO OF THESE 4 FLOWS SHOWING PROMPTS AND FINAL RESULT
+
 Come up with a PLANNING PROMPT which for this prompt "I am a middle school physics teacher preparing to teach the law of conservation of momentum. Could you create a series of clear and accurate demonstration animations and organize them into a simple presentation html?" come up with a detailed plan like:
+
 # Conservation of Momentum Animations Project
 
 ## Research Phase
