@@ -7,3 +7,4 @@ summarization/__pycache__/*
 perception/__pycache__/*
 decision/__pycache__/*
 action/__pycache__/*
+mcp_servers/tools/__pycache__/*
