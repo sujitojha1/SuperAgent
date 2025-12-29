@@ -6,3 +6,4 @@ utils/__pycache__/*
 summarization/__pycache__/*
 perception/__pycache__/*
 decision/__pycache__/*
+action/__pycache__/*
