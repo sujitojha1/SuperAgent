@@ -1,0 +1,626 @@
+{
+  "context": {
+    "session_id": "5e339b49-b33c-44c6-a2a4-35416f73f669",
+    "original_query": "Query 1: Plan a 3 day trip to Tokyo",
+    "globals": {
+      "memory": [
+        {
+          "score": 23.121387283237,
+          "session_id": "f55f5dd5-0a4b-41c9-b2c5-cf63a5fe5f30",
+          "original_query": "Query 1: Visit https://www.nobroker.in/ and search for an apartment for rent for me in Indiranagar locality. Share the first 2 search results. Remember to CLICK Search button. Don't scroll",
+          "summary_output": "The agent attempted to retrieve apartment listings for rent in Indiranagar from [Nobroker.in](https://www.nobroker.in/). It successfully navigated to the website, entered \"Indiranagar\" in the location search, and clicked the search button. However, an error occurred during the extraction of the apartment details. Specifically, a TypeError prevented the retrieval of the first two listings as requested. The current state of the search results can be found in the `global_schema`.",
+          "timestamp": "2025-06-21T07:57:51Z"
+        }
+      ]
+    },
+    "memory": [
+      {
+        "query": "Search for popular attractions and activities in Tokyo.",
+        "result_requirement": "Tool failed",
+        "solution_summary": "ERROR: Failed to search: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x130ef4350>: Failed to establish a new connection: [Errno 61] Connection refused'))"
+      },
+      {
+        "query": "Search for popular attractions and activities in Tokyo.",
+        "result_requirement": "Tool failed",
+        "solution_summary": "ERROR: Failed to search: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x130e3e990>: Failed to establish a new connection: [Errno 61] Connection refused'))"
+      },
+      {
+        "query": "Search for popular attractions and activities in Tokyo.",
+        "result_requirement": "Tool failed",
+        "solution_summary": "ERROR: Failed to search: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x130fa4250>: Failed to establish a new connection: [Errno 61] Connection refused'))"
+      },
+      {
+        "original_query": "Query 1: Plan a 3 day trip to Tokyo",
+        "result_requirement": "Final summary",
+        "summarizer_summary": "Due to technical difficulties, the system was unable to plan a 3-day trip to Tokyo. The search service repeatedly failed to connect, preventing the retrieval of information necessary to create an itinerary, find accommodation options, and determine transportation details. As a result, a trip plan could not be generated.",
+        "confidence": 0.95,
+        "original_goal_achieved": true,
+        "route": "summarize"
+      }
+    ],
+    "graph": {
+      "directed": true,
+      "multigraph": false,
+      "nodes": [
+        {
+          "id": "ROOT",
+          "data": {
+            "index": "ROOT",
+            "description": "initial query",
+            "type": "ROOT",
+            "status": "completed",
+            "result": null,
+            "conclusion": null,
+            "error": null,
+            "perception": {
+              "entities": [
+                "3 day trip",
+                "Tokyo"
+              ],
+              "result_requirement": "A detailed plan for a 3-day trip to Tokyo, including itinerary, activities, and potential costs.",
+              "original_goal_achieved": false,
+              "local_goal_achieved": false,
+              "confidence": "0.75",
+              "reasoning": "The task requires planning a trip, which involves web searches for attractions, hotels, transportation, and restaurants.  Decision is required to orchestrate this information gathering. There is no browser automation required at this stage.",
+              "local_reasoning": "Planning a trip to Tokyo requires gathering information from multiple sources, which requires a decision making process.",
+              "last_tooluse_summary": "None yet",
+              "solution_summary": "Not ready yet",
+              "route": "decision"
+            },
+            "from_step": null,
+            "id": "ROOT"
+          }
+        },
+        {
+          "id": "0",
+          "data": {
+            "index": "0",
+            "description": "Search for popular attractions and activities in Tokyo.",
+            "type": "CODE",
+            "status": "completed",
+            "result": null,
+            "conclusion": null,
+            "error": "ERROR: Failed to search: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x130fa4250>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+            "perception": {
+              "entities": [
+                "3 day trip",
+                "Tokyo"
+              ],
+              "result_requirement": "A detailed plan for a 3-day trip to Tokyo, including itinerary, activities, and potential costs.",
+              "original_goal_achieved": false,
+              "local_goal_achieved": false,
+              "confidence": "0.2",
+              "reasoning": "The initial step to search for attractions in Tokyo has failed multiple times.  The system is unable to gather necessary information to plan the trip. Since the core search functionality is failing, the task cannot be completed. Confidence is low.  Failures have exceeded threshold, summarization is best action.",
+              "local_reasoning": "The search tool consistently fails, preventing the collection of necessary information.",
+              "last_tooluse_summary": "Search tool failed with connection error.",
+              "solution_summary": "Unable to plan a trip to Tokyo due to repeated failures in accessing search functionality.",
+              "route": "summarize",
+              "instruction_to_summarize": "Summarize the fact that the system was unable to plan a trip to Tokyo because it repeatedly failed to connect to the search service. Indicate that the trip planning could not proceed due to technical difficulties."
+            },
+            "from_step": "ROOT",
+            "id": "0"
+          }
+        },
+        {
+          "id": "1",
+          "data": {
+            "index": "1",
+            "description": "Search for hotels and accommodation options in Tokyo within a specific budget.",
+            "type": "CODE",
+            "status": "Skipped",
+            "result": null,
+            "conclusion": null,
+            "error": null,
+            "perception": null,
+            "from_step": "ROOT",
+            "id": "1"
+          }
+        },
+        {
+          "id": "2",
+          "data": {
+            "index": "2",
+            "description": "Search for transportation options in Tokyo, including airport transfers and local transport.",
+            "type": "CODE",
+            "status": "Skipped",
+            "result": null,
+            "conclusion": null,
+            "error": null,
+            "perception": null,
+            "from_step": "ROOT",
+            "id": "2"
+          }
+        },
+        {
+          "id": "3",
+          "data": {
+            "index": "3",
+            "description": "Combine the search results and create a detailed 3-day itinerary for Tokyo, including potential costs.",
+            "type": "CODE",
+            "status": "Skipped",
+            "result": null,
+            "conclusion": null,
+            "error": null,
+            "perception": null,
+            "from_step": "ROOT",
+            "id": "3"
+          }
+        }
+      ],
+      "links": [
+        {
+          "source": "ROOT",
+          "target": "0",
+          "type": "normal"
+        },
+        {
+          "source": "ROOT",
+          "target": "1",
+          "type": "normal"
+        },
+        {
+          "source": "ROOT",
+          "target": "2",
+          "type": "normal"
+        },
+        {
+          "source": "ROOT",
+          "target": "3",
+          "type": "normal"
+        }
+      ]
+    }
+  },
+  "session": {
+    "session_id": "5e339b49-b33c-44c6-a2a4-35416f73f669",
+    "original_query": "Query 1: Plan a 3 day trip to Tokyo",
+    "perception_snapshots": [
+      {
+        "run_id": "5e339b49-b33c-44c6-a2a4-35416f73f669-P",
+        "snapshot_type": "user_query",
+        "entities": [
+          "3 day trip",
+          "Tokyo"
+        ],
+        "result_requirement": "A detailed plan for a 3-day trip to Tokyo, including itinerary, activities, and potential costs.",
+        "original_goal_achieved": false,
+        "reasoning": "The task requires planning a trip, which involves web searches for attractions, hotels, transportation, and restaurants.  Decision is required to orchestrate this information gathering. There is no browser automation required at this stage.",
+        "local_goal_achieved": false,
+        "local_reasoning": "Planning a trip to Tokyo requires gathering information from multiple sources, which requires a decision making process.",
+        "last_tooluse_summary": "None yet",
+        "solution_summary": "Not ready yet",
+        "confidence": "0.75",
+        "route": "decision",
+        "timestamp": "...",
+        "return_to": ""
+      },
+      {
+        "run_id": "5e339b49-b33c-44c6-a2a4-35416f73f669-P",
+        "snapshot_type": "step_result",
+        "entities": [
+          "3 day trip",
+          "Tokyo"
+        ],
+        "result_requirement": "A detailed plan for a 3-day trip to Tokyo, including itinerary, activities, and potential costs.",
+        "original_goal_achieved": false,
+        "reasoning": "The initial step to search for attractions in Tokyo has failed multiple times.  The system is unable to gather necessary information to plan the trip. Since the core search functionality is failing, the task cannot be completed. Confidence is low.  Failures have exceeded threshold, summarization is best action.",
+        "local_goal_achieved": false,
+        "local_reasoning": "The search tool consistently fails, preventing the collection of necessary information.",
+        "last_tooluse_summary": "Search tool failed with connection error.",
+        "solution_summary": "Unable to plan a trip to Tokyo due to repeated failures in accessing search functionality.",
+        "confidence": "0.2",
+        "route": "summarize",
+        "timestamp": "...",
+        "return_to": ""
+      }
+    ],
+    "decision_snapshots": [
+      {
+        "run_id": "e122213e-d42f-4752-be3f-eba7cc6bf463",
+        "input": {
+          "current_time": "2025-12-19T09:03:16.436998",
+          "plan_mode": "initial",
+          "planning_strategy": "exploratory",
+          "original_query": "Query 1: Plan a 3 day trip to Tokyo",
+          "perception": {
+            "entities": [
+              "3 day trip",
+              "Tokyo"
+            ],
+            "result_requirement": "A detailed plan for a 3-day trip to Tokyo, including itinerary, activities, and potential costs.",
+            "original_goal_achieved": false,
+            "local_goal_achieved": false,
+            "confidence": "0.75",
+            "reasoning": "The task requires planning a trip, which involves web searches for attractions, hotels, transportation, and restaurants.  Decision is required to orchestrate this information gathering. There is no browser automation required at this stage.",
+            "local_reasoning": "Planning a trip to Tokyo requires gathering information from multiple sources, which requires a decision making process.",
+            "last_tooluse_summary": "None yet",
+            "solution_summary": "Not ready yet",
+            "route": "decision"
+          },
+          "plan_graph": {},
+          "completed_steps": [
+            {
+              "index": "ROOT",
+              "description": "initial query",
+              "type": "ROOT",
+              "status": "completed",
+              "result": null,
+              "conclusion": null,
+              "error": null,
+              "perception": {
+                "entities": [
+                  "3 day trip",
+                  "Tokyo"
+                ],
+                "result_requirement": "A detailed plan for a 3-day trip to Tokyo, including itinerary, activities, and potential costs.",
+                "original_goal_achieved": false,
+                "local_goal_achieved": false,
+                "confidence": "0.75",
+                "reasoning": "The task requires planning a trip, which involves web searches for attractions, hotels, transportation, and restaurants.  Decision is required to orchestrate this information gathering. There is no browser automation required at this stage.",
+                "local_reasoning": "Planning a trip to Tokyo requires gathering information from multiple sources, which requires a decision making process.",
+                "last_tooluse_summary": "None yet",
+                "solution_summary": "Not ready yet",
+                "route": "decision"
+              },
+              "from_step": null,
+              "id": "ROOT"
+            }
+          ],
+          "failed_steps": [
+            {
+              "index": "ROOT",
+              "description": "initial query",
+              "type": "ROOT",
+              "status": "completed",
+              "result": null,
+              "conclusion": null,
+              "error": null,
+              "perception": {
+                "entities": [
+                  "3 day trip",
+                  "Tokyo"
+                ],
+                "result_requirement": "A detailed plan for a 3-day trip to Tokyo, including itinerary, activities, and potential costs.",
+                "original_goal_achieved": false,
+                "local_goal_achieved": false,
+                "confidence": "0.75",
+                "reasoning": "The task requires planning a trip, which involves web searches for attractions, hotels, transportation, and restaurants.  Decision is required to orchestrate this information gathering. There is no browser automation required at this stage.",
+                "local_reasoning": "Planning a trip to Tokyo requires gathering information from multiple sources, which requires a decision making process.",
+                "last_tooluse_summary": "None yet",
+                "solution_summary": "Not ready yet",
+                "route": "decision"
+              },
+              "from_step": null,
+              "id": "ROOT"
+            }
+          ],
+          "globals_schema": {
+            "memory": {
+              "type": "list",
+              "preview": "[{'score': 23.121387283237, 'session_id': 'f55f5dd5-0a4b-41c9-b2c5-cf63a5fe5f30', 'original_query': \"Query 1: Visit https://www.nobroker.in/ and search for an apartment for rent for me in Indiranagar locality. Share the first 2 search results. Remember to CLICK Search button. Don't scroll\", 'summary_output': 'The agent attempted to retrieve apartment listings for rent in Indiranagar from [Nobroker.in](https://www.nobroker.in/). It successfully navigated to the website, entered \"Indiranagar\" in t\u2026"
+            }
+          }
+        },
+        "output": {
+          "plan_graph": {
+            "nodes": [
+              {
+                "id": "0",
+                "description": "Search for popular attractions and activities in Tokyo."
+              },
+              {
+                "id": "1",
+                "description": "Search for hotels and accommodation options in Tokyo within a specific budget."
+              },
+              {
+                "id": "2",
+                "description": "Search for transportation options in Tokyo, including airport transfers and local transport."
+              },
+              {
+                "id": "3",
+                "description": "Combine the search results and create a detailed 3-day itinerary for Tokyo, including potential costs."
+              }
+            ],
+            "edges": [
+              {
+                "from": "ROOT",
+                "to": "0",
+                "type": "normal"
+              },
+              {
+                "from": "0",
+                "to": "1",
+                "type": "normal"
+              },
+              {
+                "from": "1",
+                "to": "2",
+                "type": "normal"
+              },
+              {
+                "from": "2",
+                "to": "3",
+                "type": "normal"
+              }
+            ]
+          },
+          "next_step_id": "0",
+          "code_variants": {
+            "CODE_0A": "search_results_0A = search_stored_documents_rag(\"top attractions in Tokyo\")\nreturn {\"search_results_0A\": search_results_0A}",
+            "CODE_0B": "search_results_0B = search_stored_documents_rag(\"things to do in Tokyo\")\nreturn {\"search_results_0B\": search_results_0B}",
+            "CODE_0C": "search_results_0C = search_stored_documents_rag(\"what to see in Tokyo\")\nreturn {\"search_results_0C\": search_results_0C}"
+          }
+        },
+        "next_step_id": "0",
+        "plan_graph": {
+          "nodes": [
+            {
+              "id": "0",
+              "description": "Search for popular attractions and activities in Tokyo."
+            },
+            {
+              "id": "1",
+              "description": "Search for hotels and accommodation options in Tokyo within a specific budget."
+            },
+            {
+              "id": "2",
+              "description": "Search for transportation options in Tokyo, including airport transfers and local transport."
+            },
+            {
+              "id": "3",
+              "description": "Combine the search results and create a detailed 3-day itinerary for Tokyo, including potential costs."
+            }
+          ],
+          "edges": [
+            {
+              "from": "ROOT",
+              "to": "0",
+              "type": "normal"
+            },
+            {
+              "from": "0",
+              "to": "1",
+              "type": "normal"
+            },
+            {
+              "from": "1",
+              "to": "2",
+              "type": "normal"
+            },
+            {
+              "from": "2",
+              "to": "3",
+              "type": "normal"
+            }
+          ]
+        },
+        "code_variants": {
+          "CODE_0A": "search_results_0A = search_stored_documents_rag(\"top attractions in Tokyo\")\nreturn {\"search_results_0A\": search_results_0A}",
+          "CODE_0B": "search_results_0B = search_stored_documents_rag(\"things to do in Tokyo\")\nreturn {\"search_results_0B\": search_results_0B}",
+          "CODE_0C": "search_results_0C = search_stored_documents_rag(\"what to see in Tokyo\")\nreturn {\"search_results_0C\": search_results_0C}"
+        },
+        "timestamp": null,
+        "return_to": ""
+      }
+    ],
+    "execution_snapshots": [
+      {
+        "run_id": "a5564baa-c764-40c7-98b2-8c6beaf4a22c",
+        "step_id": "0",
+        "variant_used": "CODE_0A",
+        "code": "search_results_0A = search_stored_documents_rag(\"top attractions in Tokyo\")\nreturn {\"search_results_0A\": search_results_0A}",
+        "status": "error",
+        "result": null,
+        "error": "ERROR: Failed to search: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x130ef4350>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+        "execution_time": "2025-12-19 14:33:23",
+        "total_time": "0.025",
+        "return_to": ""
+      },
+      {
+        "run_id": "ce4e775c-4b75-4309-8398-22d11d9161c8",
+        "step_id": "0",
+        "variant_used": "CODE_0B",
+        "code": "search_results_0B = search_stored_documents_rag(\"things to do in Tokyo\")\nreturn {\"search_results_0B\": search_results_0B}",
+        "status": "error",
+        "result": null,
+        "error": "ERROR: Failed to search: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x130e3e990>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+        "execution_time": "2025-12-19 14:33:23",
+        "total_time": "0.007",
+        "return_to": ""
+      },
+      {
+        "run_id": "ba3b215c-d675-4f2a-acc1-980798864ef8",
+        "step_id": "0",
+        "variant_used": "CODE_0C",
+        "code": "search_results_0C = search_stored_documents_rag(\"what to see in Tokyo\")\nreturn {\"search_results_0C\": search_results_0C}",
+        "status": "error",
+        "result": null,
+        "error": "ERROR: Failed to search: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x130fa4250>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+        "execution_time": "2025-12-19 14:33:23",
+        "total_time": "0.006",
+        "return_to": ""
+      }
+    ],
+    "summarizer_snapshots": [
+      {
+        "run_id": "82bf14e7-ecd8-400d-bbc6-68cd50e60e41",
+        "input": {
+          "original_query": "Query 1: Plan a 3 day trip to Tokyo",
+          "globals_schema": {
+            "memory": [
+              {
+                "score": 23.121387283237,
+                "session_id": "f55f5dd5-0a4b-41c9-b2c5-cf63a5fe5f30",
+                "original_query": "Query 1: Visit https://www.nobroker.in/ and search for an apartment for rent for me in Indiranagar locality. Share the first 2 search results. Remember to CLICK Search button. Don't scroll",
+                "summary_output": "The agent attempted to retrieve apartment listings for rent in Indiranagar from [Nobroker.in](https://www.nobroker.in/). It successfully navigated to the website, entered \"Indiranagar\" in the location search, and clicked the search button. However, an error occurred during the extraction of the apartment details. Specifically, a TypeError prevented the retrieval of the first two listings as requested. The current state of the search results can be found in the `global_schema`.",
+                "timestamp": "2025-06-21T07:57:51Z"
+              }
+            ]
+          },
+          "plan_graph": {
+            "directed": true,
+            "multigraph": false,
+            "nodes": [
+              {
+                "id": "ROOT",
+                "data": {
+                  "index": "ROOT",
+                  "description": "initial query",
+                  "type": "ROOT",
+                  "status": "completed",
+                  "result": null,
+                  "conclusion": null,
+                  "error": null,
+                  "perception": {
+                    "entities": [
+                      "3 day trip",
+                      "Tokyo"
+                    ],
+                    "result_requirement": "A detailed plan for a 3-day trip to Tokyo, including itinerary, activities, and potential costs.",
+                    "original_goal_achieved": false,
+                    "local_goal_achieved": false,
+                    "confidence": "0.75",
+                    "reasoning": "The task requires planning a trip, which involves web searches for attractions, hotels, transportation, and restaurants.  Decision is required to orchestrate this information gathering. There is no browser automation required at this stage.",
+                    "local_reasoning": "Planning a trip to Tokyo requires gathering information from multiple sources, which requires a decision making process.",
+                    "last_tooluse_summary": "None yet",
+                    "solution_summary": "Not ready yet",
+                    "route": "decision"
+                  },
+                  "from_step": null,
+                  "id": "ROOT"
+                }
+              },
+              {
+                "id": "0",
+                "data": {
+                  "index": "0",
+                  "description": "Search for popular attractions and activities in Tokyo.",
+                  "type": "CODE",
+                  "status": "completed",
+                  "result": null,
+                  "conclusion": null,
+                  "error": "ERROR: Failed to search: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x130fa4250>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+                  "perception": {
+                    "entities": [
+                      "3 day trip",
+                      "Tokyo"
+                    ],
+                    "result_requirement": "A detailed plan for a 3-day trip to Tokyo, including itinerary, activities, and potential costs.",
+                    "original_goal_achieved": false,
+                    "local_goal_achieved": false,
+                    "confidence": "0.2",
+                    "reasoning": "The initial step to search for attractions in Tokyo has failed multiple times.  The system is unable to gather necessary information to plan the trip. Since the core search functionality is failing, the task cannot be completed. Confidence is low.  Failures have exceeded threshold, summarization is best action.",
+                    "local_reasoning": "The search tool consistently fails, preventing the collection of necessary information.",
+                    "last_tooluse_summary": "Search tool failed with connection error.",
+                    "solution_summary": "Unable to plan a trip to Tokyo due to repeated failures in accessing search functionality.",
+                    "route": "summarize",
+                    "instruction_to_summarize": "Summarize the fact that the system was unable to plan a trip to Tokyo because it repeatedly failed to connect to the search service. Indicate that the trip planning could not proceed due to technical difficulties."
+                  },
+                  "from_step": "ROOT",
+                  "id": "0"
+                }
+              },
+              {
+                "id": "1",
+                "data": {
+                  "index": "1",
+                  "description": "Search for hotels and accommodation options in Tokyo within a specific budget.",
+                  "type": "CODE",
+                  "status": "Skipped",
+                  "result": null,
+                  "conclusion": null,
+                  "error": null,
+                  "perception": null,
+                  "from_step": "ROOT",
+                  "id": "1"
+                }
+              },
+              {
+                "id": "2",
+                "data": {
+                  "index": "2",
+                  "description": "Search for transportation options in Tokyo, including airport transfers and local transport.",
+                  "type": "CODE",
+                  "status": "Skipped",
+                  "result": null,
+                  "conclusion": null,
+                  "error": null,
+                  "perception": null,
+                  "from_step": "ROOT",
+                  "id": "2"
+                }
+              },
+              {
+                "id": "3",
+                "data": {
+                  "index": "3",
+                  "description": "Combine the search results and create a detailed 3-day itinerary for Tokyo, including potential costs.",
+                  "type": "CODE",
+                  "status": "Skipped",
+                  "result": null,
+                  "conclusion": null,
+                  "error": null,
+                  "perception": null,
+                  "from_step": "ROOT",
+                  "id": "3"
+                }
+              }
+            ],
+            "links": [
+              {
+                "source": "ROOT",
+                "target": "0",
+                "type": "normal"
+              },
+              {
+                "source": "ROOT",
+                "target": "1",
+                "type": "normal"
+              },
+              {
+                "source": "ROOT",
+                "target": "2",
+                "type": "normal"
+              },
+              {
+                "source": "ROOT",
+                "target": "3",
+                "type": "normal"
+              }
+            ]
+          },
+          "perception": {
+            "entities": [
+              "3 day trip",
+              "Tokyo"
+            ],
+            "result_requirement": "A detailed plan for a 3-day trip to Tokyo, including itinerary, activities, and potential costs.",
+            "original_goal_achieved": false,
+            "local_goal_achieved": false,
+            "confidence": "0.2",
+            "reasoning": "The initial step to search for attractions in Tokyo has failed multiple times.  The system is unable to gather necessary information to plan the trip. Since the core search functionality is failing, the task cannot be completed. Confidence is low.  Failures have exceeded threshold, summarization is best action.",
+            "local_reasoning": "The search tool consistently fails, preventing the collection of necessary information.",
+            "last_tooluse_summary": "Search tool failed with connection error.",
+            "solution_summary": "Unable to plan a trip to Tokyo due to repeated failures in accessing search functionality.",
+            "route": "summarize",
+            "instruction_to_summarize": "Summarize the fact that the system was unable to plan a trip to Tokyo because it repeatedly failed to connect to the search service. Indicate that the trip planning could not proceed due to technical difficulties."
+          }
+        },
+        "summary_output": "Due to technical difficulties, the system was unable to plan a 3-day trip to Tokyo. The search service repeatedly failed to connect, preventing the retrieval of information necessary to create an itinerary, find accommodation options, and determine transportation details. As a result, a trip plan could not be generated.",
+        "success": true,
+        "error": null,
+        "timestamp": "2025-12-19T08:58:46Z",
+        "return_to": ""
+      }
+    ],
+    "final_summary": "Due to technical difficulties, the system was unable to plan a 3-day trip to Tokyo. The search service repeatedly failed to connect, preventing the retrieval of information necessary to create an itinerary, find accommodation options, and determine transportation details. As a result, a trip plan could not be generated.",
+    "status": "success",
+    "completed_at": "2025-12-19T09:03:31.831542"
+  },
+  "status": "success",
+  "final_step_id": "3",
+  "reason": "Summarized successfully",
+  "timestamp": "2025-12-19T09:03:31.832216",
+  "original_query": "Query 1: Plan a 3 day trip to Tokyo",
+  "final_summary": "Due to technical difficulties, the system was unable to plan a 3-day trip to Tokyo. The search service repeatedly failed to connect, preventing the retrieval of information necessary to create an itinerary, find accommodation options, and determine transportation details. As a result, a trip plan could not be generated."
+}
