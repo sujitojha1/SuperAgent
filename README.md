@@ -52,3 +52,10 @@ Come up with a PLANNING PROMPT which for this prompt "I am a middle school physi
 So, first run the user_prompt with the prompt provided. Notice that it doesn't provide as detailed response as above provided. Try and come up with a new prompt that that it provides as detailed plan for this user_prompt WHILE NOT BREAKING OTHER PLANS. SHARE FINAL PROMPT AND GEMINI RESULTS
 
 
+## High Level Plan
+
+[ ] Pick four task
+[ ] Make the broswer sse mcp running
+[ ] Try the four task and see if any prompt changes reqired
+
+
