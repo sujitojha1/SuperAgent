@@ -54,8 +54,10 @@ So, first run the user_prompt with the prompt provided. Notice that it doesn't p
 
 ## High Level Plan
 
-[ ] Pick four task. 
-[ ] Make the broswer sse mcp running. 
-[ ] Try the four task and see if any prompt changes reqired. 
+- [ ] Pick four task  
+- [ ] Make the broswer sse mcp running  
+- [ ] Try the four task and see if any prompt changes reqired  
+
+
 
 
